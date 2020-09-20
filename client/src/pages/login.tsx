@@ -169,13 +169,23 @@ class login extends Component<any, User> {
                   {loading ? (
                     <CircularProgress className={classes.progress} size={25} />
                   ) : (
-                    "Login"
-                  )}
+                      "Login"
+                    )}
                 </Button>
                 <div className={classes.signup}>
                   <small>
                     Don't have an account? sign up{" "}
                     <Link to="/signup">here.</Link>
+                  </small>
+                  <br />
+                  <br />
+                  <small>
+                    Try it out using:
+                    <br />
+                    email: user@email.com
+                    <br />
+
+                    password: passowrd
                   </small>
                 </div>
               </div>

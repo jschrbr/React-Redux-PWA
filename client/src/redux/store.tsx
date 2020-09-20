@@ -92,7 +92,7 @@ const composeEnhancers =
 
 const persistedStore =
   JSON.parse(localStorage.getItem("persistedStore") as string) || {};
-console.log(persistedStore);
+// console.log(persistedStore);
 
 const initialState = {
   ...persistedStore,
