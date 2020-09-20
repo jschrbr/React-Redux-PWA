@@ -51,7 +51,7 @@ class PartCard extends Component<any, any> {
     this.setState({ anchorEl: event.currentTarget });
   };
   handleClose = (event: any) => {
-    console.log(event.target.id);
+    // console.log(event.target.id);
     this.props.deletePart(event.target.id)
     this.setState({ anchorEl: null });
   };

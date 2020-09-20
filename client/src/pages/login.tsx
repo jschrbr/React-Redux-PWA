@@ -185,7 +185,7 @@ class login extends Component<any, User> {
                     email: user@email.com
                     <br />
 
-                    password: passowrd
+                    password: password
                   </small>
                 </div>
               </div>
