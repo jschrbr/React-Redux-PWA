@@ -6,13 +6,13 @@ import { connect } from "react-redux";
 import SpeedDial from "@material-ui/lab/SpeedDial";
 import SpeedDialIcon from "@material-ui/lab/SpeedDialIcon";
 import SpeedDialAction from "@material-ui/lab/SpeedDialAction";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import PrintIcon from "@material-ui/icons/Print";
-import DeveloperBoardIcon from "@material-ui/icons/DeveloperBoard";
 import AddIcon from "@material-ui/icons/Add";
-import EditIcon from "@material-ui/icons/Edit";
-import ListIcon from "@material-ui/icons/List";
-import ViewComfyIcon from "@material-ui/icons/ViewComfy";
+// import DashboardIcon from "@material-ui/icons/Dashboard";
+// import PrintIcon from "@material-ui/icons/Print";
+// import DeveloperBoardIcon from "@material-ui/icons/DeveloperBoard";
+// import EditIcon from "@material-ui/icons/Edit";
+// import ListIcon from "@material-ui/icons/List";
+// import ViewComfyIcon from "@material-ui/icons/ViewComfy";
 
 import { NavTheme } from "../../utils/theme";
 import { withStyles } from "@material-ui/core";
@@ -21,16 +21,16 @@ import AddPart from "../AddPart";
 import { openAddPart } from "../../redux/actions/part-actions";
 
 const actions = [
-  { icon: <EditIcon />, name: "Edit items", operation: "edit" },
-  { icon: <DeveloperBoardIcon />, name: "View devices", operation: "device" },
-  { icon: <PrintIcon />, name: "Print reports", operation: "print" },
-  {
-    icon: <DashboardIcon />,
-    name: "View inventory dashboard",
-    operation: "dashboard",
-  },
-  { icon: <ListIcon />, name: "List view", operation: "list" },
-  { icon: <ViewComfyIcon />, name: "Grid view", operation: "grid" },
+  // { icon: <EditIcon />, name: "Edit items", operation: "edit" },
+  // { icon: <DeveloperBoardIcon />, name: "View devices", operation: "device" },
+  // { icon: <PrintIcon />, name: "Print reports", operation: "print" },
+  // {
+  // icon: <DashboardIcon />,
+  // name: "View inventory dashboard",
+  // operation: "dashboard",
+  // },
+  // { icon: <ListIcon />, name: "List view", operation: "list" },
+  // { icon: <ViewComfyIcon />, name: "Grid view", operation: "grid" },
   { icon: <AddIcon />, name: "Add an item", operation: "add" },
 ];
 

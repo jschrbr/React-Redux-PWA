@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getParts } from "../redux/actions/part-actions";
@@ -16,7 +16,7 @@ import PartSkeleton from "../components/PartCard/skeleton";
 
 
 class home extends Component<any, any> {
-  
+
   static propTypes: {
     getParts: PropTypes.Validator<(...args: any[]) => any>;
     part: PropTypes.Validator<object>;
@@ -39,8 +39,6 @@ class home extends Component<any, any> {
       classes,
       part: { parts, loading },
     } = this.props;
-    console.log(parts, loading)
-
 
     const recentPartsMarkup = !loading ? (
       parts.map((part: any) => (
@@ -49,10 +47,10 @@ class home extends Component<any, any> {
         </Grid>
       ))
     ) : (
-      <Grow in={true} timeout={1000}>
-        <PartSkeleton count={12} />
-      </Grow>
-    );
+        <Grow in={true} timeout={1000}>
+          <PartSkeleton count={12} />
+        </Grow>
+      );
     return (
       <Container className={classes.homeContainer}>
         <Grid container spacing={4}>

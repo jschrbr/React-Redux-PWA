@@ -25,6 +25,10 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import { PartTheme } from "../../utils/theme";
 
+import {
+  deletePart
+} from "../../redux/actions/part-actions";
+
 class PartCard extends Component<any, any> {
   static propTypes: {
     part: PropTypes.Validator<object>;
@@ -48,7 +52,7 @@ class PartCard extends Component<any, any> {
   };
   handleClose = (event: any) => {
     console.log(event.target.id);
-
+    this.props.deletePart(event.target.id)
     this.setState({ anchorEl: null });
   };
 
@@ -59,7 +63,7 @@ class PartCard extends Component<any, any> {
 
     const {
       classes,
-      part: { name, createdAt, updatedAt, quantity },
+      part: { name, partId, createdAt, updatedAt, quantity },
       network: { showOfflineBanner },
     } = this.props;
 
@@ -94,32 +98,29 @@ class PartCard extends Component<any, any> {
           {showOfflineBanner ? (
             ""
           ) : (
-            <CardActions>
-              <div className={classes.grow}></div>
+              <CardActions>
+                <div className={classes.grow}></div>
 
-              <IconButton
-                aria-label="settings"
-                aria-haspopup="true"
-                onClick={this.handleEditClick}
-              >
-                <MoreVertIcon />
-              </IconButton>
-              <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={this.handleClose}
-              >
-                <MenuItem id="edit" onClick={this.handleClose}>
-                  Edit
+                <IconButton
+                  aria-label="settings"
+                  aria-haspopup="true"
+                  onClick={this.handleEditClick}
+                >
+                  <MoreVertIcon />
+                </IconButton>
+                <Menu
+                  id="simple-menu"
+                  anchorEl={anchorEl}
+                  keepMounted
+                  open={Boolean(anchorEl)}
+                  onClose={this.handleClose}
+                >
+                  <MenuItem id={partId} onClick={this.handleClose}>
+                    Remove
                 </MenuItem>
-                <MenuItem id="remove" onClick={this.handleClose}>
-                  Remove
-                </MenuItem>
-              </Menu>
-            </CardActions>
-          )}
+                </Menu>
+              </CardActions>
+            )}
 
           <CardContent>
             <Typography variant="body1" color="textSecondary" component="p">
@@ -141,7 +142,9 @@ class PartCard extends Component<any, any> {
 const mapStateToProps = (state: any) => ({
   network: state.network,
 });
-const mapActionsToProps: any = {};
+const mapActionsToProps: any = {
+  deletePart
+};
 
 PartCard.propTypes = {
   part: PropTypes.object.isRequired,

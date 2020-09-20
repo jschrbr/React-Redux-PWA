@@ -51,12 +51,16 @@ export class AddPart extends Component<any, any, any> {
     this.props.clearErrors();
     this.props.closeAddPart();
   };
-  handleSubmit = () => {
-    this.props.postPart({
+  handleSubmit = async () => {
+    await this.props.postPart({
       name: this.state.name,
       quantity: this.state.quantity,
     });
+
+    window.location.reload(false)
+    this.handleClose()
   };
+
   handleChange = (event: any) => {
     this.setState({
       [event.target.id]: event.target.value,
@@ -71,7 +75,7 @@ export class AddPart extends Component<any, any, any> {
     return (
       <Fragment>
         <Dialog open={open} onClose={this.handleClose} fullWidth maxWidth="sm">
-          <DialogTitle>Post a scream!</DialogTitle>
+          <DialogTitle>Add a part</DialogTitle>
           <DialogContent>
             <div className={classes.flexScream}>
               <form
@@ -124,8 +128,8 @@ export class AddPart extends Component<any, any, any> {
               {loading ? (
                 <CircularProgress className={classes.progress} size={25} />
               ) : (
-                "Add part"
-              )}
+                  "Add part"
+                )}
             </Button>
           </DialogActions>
         </Dialog>
