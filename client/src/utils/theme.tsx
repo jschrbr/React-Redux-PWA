@@ -84,8 +84,10 @@ export const AppTheme = () => {
     form: {
       container: {
         display: "flex",
+        height: "100vh",
       },
       paper: {
+        marginTop: "20vh",
         textAlign: "center",
         maxWidth: 600,
         padding: 30,
